@@ -44,6 +44,7 @@ class AppContainer extends React.Component {
                         selectObservation={this.props.selectObservation}
                         obsPoints={this.props.obsPoints}
                         fetchFailed={this.props.fetchFailed}
+                        isFetching={this.props.isFetching}
                     />;
          }
     }
@@ -72,6 +73,7 @@ const mapStateToProps = (state) => {
         selectedObsPoint: state.appReducer.selectedObsPoint,
         obsPoints: state.appReducer.obsPoints,
         fetchFailed: state.appReducer.fetchFailed,
+        isFetching: state.appReducer.isFetching,
         formData: state.formReducer.formData,
         formError: state.formReducer.formError,
         postSuccess: state.formReducer.postSuccess,

@@ -37,6 +37,7 @@ const renderObservationPoints = (props) => {
 const List = (props) => {
     return(
         <div className='row'>
+            <div className={(props.isFetching) ? '' : 'd-none'}>Loading...</div>
             {renderObservationPoints(props)}
         </div>
     )
