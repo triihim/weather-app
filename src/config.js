@@ -1,4 +1,4 @@
-export const API_URL = 'http://localhost:8080/api/';
+export const API_URL = process.env.API_URL || 'http://localhost:8080/api/';
 
 // Allowed temperature input limits in celsius degrees.
 export const MIN_TEMP = -70;
