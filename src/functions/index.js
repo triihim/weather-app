@@ -64,7 +64,7 @@ export const validateFormData = (formData, obsPoints) => {
             return false;
         }
         if(isValidLocation(formData.obsPointID, obsPoints) === true) locationFlag = false;
-        if(parseInt(formData.temperature) <= MAX_TEMP && parseInt(formData.temperature) >= MIN_TEMP) temperatureFlag = false;
+        if(parseFloat(formData.temperature) <= MAX_TEMP && parseFloat(formData.temperature) >= MIN_TEMP) temperatureFlag = false;
 
         if(obsPointFlag === false && temperatureFlag === false && locationFlag === false) {
             return true;
