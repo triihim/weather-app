@@ -47,9 +47,7 @@ const AddForm = (props) => {
                         <div className='form-group col-sm-4 col-12'>
                             <label htmlFor='temperature'>Temperature(&deg;C)</label>
                             <input id='temperature'
-                                    type='number' 
-                                    min='-70' 
-                                    max='70' 
+                                    type='text' 
                                     className='form-control'
                                     value={props.formData.temperature}
                                     onChange={(event) => props.formChange(event.target)}>
