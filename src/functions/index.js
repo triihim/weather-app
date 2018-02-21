@@ -58,14 +58,24 @@ export const validateFormData = (formData, obsPoints) => {
         let temperatureFlag = true;
         let locationFlag = true;
 
+        // Check that obs. point is selected.
         if(formData.obsPointID != '') {
             obsPointFlag = false;
         } else {
             return false;
         }
-        if(!isNaN(parseFloat(formData.temperature)) && isFinite(formData.temperature)) return false;
+
+        // Check that temperature is correct.
+        if(!isNaN(parseFloat(formData.temperature)) && isFinite(formData.temperature)) {
+            // Check that given temperature is within configured limits.
+             if(parseFloat(formData.temperature) <= MAX_TEMP && parseFloat(formData.temperature) >= MIN_TEMP) temperatureFlag = false;
+
+        } else {
+            return false;
+        }
+
+        // Check that user is at selected obs. point.
         if(isValidLocation(formData.obsPointID, obsPoints) === true) locationFlag = false;
-        if(parseFloat(formData.temperature) <= MAX_TEMP && parseFloat(formData.temperature) >= MIN_TEMP) temperatureFlag = false;
 
         if(obsPointFlag === false && temperatureFlag === false && locationFlag === false) {
             return true;
