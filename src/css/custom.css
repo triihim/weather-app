@@ -1,0 +1,19 @@
+.container {
+    max-width: 900px;
+}
+.bg-steelblue {
+    background-color: steelblue;
+}
+.text-steelblue {
+    color: steelblue;
+}
+.btn-primary {
+    background-color: steelblue;
+    border-color: steelblue;
+}
+.btn-steelblue:hover {
+    background-color: steelblue;
+}
+.text-strike {
+    text-decoration: line-through;
+}
