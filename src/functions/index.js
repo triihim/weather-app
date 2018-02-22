@@ -123,6 +123,7 @@ export const getMinTemp = (observations) => {
 // Finds newest temperature observation.
 export const getLatestTemp = (observations) => {
 	let latest = '-';
-    latest = Math.max.apply(Math, observations.map(o => (Date.parse(o.dateTime) ? o.temperature : '-' )));
+    //latest = Math.max.apply(Math, observations.map(o => (Date.parse(o.dateTime) ? o.temperature : '-' )));
+    latest = observations[0].temp;
     return latest;
 }
